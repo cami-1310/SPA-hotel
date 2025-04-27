@@ -1,0 +1,27 @@
+.links{
+    display: flex;
+    gap: 30px;
+    justify-content: right;
+    align-items: center;
+}
+
+.links a{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+.links a span{
+    display: inline-block;
+}
+
+.links a span,
+.links a svg{
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.links a:hover span,
+.links a:hover{
+    color: #27667B;
+    transform: scale(1.1);
+}
