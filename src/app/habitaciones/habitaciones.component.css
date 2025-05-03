@@ -1,0 +1,45 @@
+.col{
+    margin: 0;
+}
+
+.card{
+    border: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    text-shadow: 5px 0px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+a:hover,
+.card-group .card img:hover{
+    transform: scale(1.02);
+}
+
+h5{
+    font-size: 35px;
+}
+
+.card-group .card img{
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card-group .card{
+    background-color: none;
+}
+
+.contenedor{
+    padding: 20px;
+    background-color: #A0C878;
+    margin-bottom: 20px;
+}
+
+.contenedor h1{
+    color: white;
+    text-shadow: 5px 0px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: "Bodoni Moda", serif;
+}
