@@ -13,7 +13,7 @@
   .contact-section h2 {
     font-size: 32px;
     margin-bottom: 10px;
-    color: #143D60; /* color principal */
+    color: #27667B; /* color principal */
   }
   
   .contact-section p {
@@ -41,7 +41,7 @@
   .contact-form label {
     margin-top: 15px;
     font-weight: bold;
-    color: #143D60;
+    color: #27667B;
   }
   
   .contact-form input,
