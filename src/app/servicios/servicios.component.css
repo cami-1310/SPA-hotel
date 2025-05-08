@@ -34,3 +34,53 @@ h1 {
   flex-shrink: 0;
   color: #A0C878; 
 }
+
+
+#contenido {
+    padding: 40px;
+    display: grid;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    margin: 30px;
+    background-color: #f5f5f5;
+}
+
+.home-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+.home-img img{
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+}
+
+.home-img{
+  padding: 10px 20px 20px ;
+    background-color: #A0C878;
+    height: auto;
+    border-radius: 10px;
+}
+
+#contenido h2 {
+  color: white;
+  text-shadow: 5px 0px 5px rgba(0, 0, 0, 0.2);
+      font-family: "Bodoni Moda", serif;
+    margin: 20px 0;
+    font-weight: 500;
+}
+
+#contenido p {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    color: white;
+}
+
