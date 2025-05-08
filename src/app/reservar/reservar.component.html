@@ -1,0 +1,92 @@
+<section class="contenido">
+    <div class="mensaje">
+        <img src="cab.png" alt="...">
+        <h1>¡Gracias por reservar con nosotros!</h1>
+        <br>
+        <h4>Haremos lo posible para que tu estancia sea inolvidable.</h4>
+    </div>
+
+    <div class="contenedor">
+        <form [formGroup]="form" (ngSubmit)="enviarFormulario()">
+            <!-- Nombre -->
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput0" formControlName="nombre">
+                <label for="floatingInput0">Nombre del titular de la reservación</label>
+                @if (form.get('nombre')?.touched && form.get('nombre')?.errors) {
+                    @if (form.get('nombre')?.hasError('required')) {
+                        <div class="msj">El nombre es obligatorio.</div>
+                    }
+                    @if (form.get('nombre')?.hasError('pattern')) {
+                        <div class="msj">Solo se permiten letras y espacios. Sin caracteres especiales ni números.</div>
+                    }
+                }
+            </div>
+
+            <!-- Fecha de llegada -->
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="floatingInput1" formControlName="fechaIngreso">
+                <label for="floatingInput1">Fecha de llegada</label>
+                @if (form.get('fechaIngreso')?.touched && form.get('fechaIngreso')?.errors) {
+                    @if (form.get('fechaIngreso')?.hasError('required')) {
+                        <div class="msj">La fecha de llegada es obligatoria.</div>
+                    }
+                    @if (form.get('fechaIngreso')?.hasError('fechaPasada')) {
+                        <div class="msj">La fecha no puede ser anterior a hoy.</div>
+                    }
+                }
+            </div>
+
+            <!-- Fecha de salida -->
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="floatingInput2" formControlName="fechaSalida">
+                <label for="floatingInput2">Fecha de salida</label>
+                @if (form.get('fechaSalida')?.touched && form.get('fechaSalida')?.errors) {
+                    @if (form.get('fechaSalida')?.hasError('required')) {
+                        <div class="msj">La fecha de salida es obligatoria.</div>
+                    }
+                    @if (form.get('fechaSalida')?.hasError('fechaPasada')) {
+                        <div class="msj">La fecha no puede ser anterior a hoy.</div>
+                    }
+                    @if (form.errors?.['fechasInvalidas']) {
+                        <div class="msj">La fecha de salida debe ser posterior a la fecha de llegada.</div>
+                    }
+                }
+            </div>
+
+            <!-- Tipo de habitación -->
+            <div class="form-control mb-3">
+                <label class="form-label">Tipo de habitación:</label>
+
+                @for (tipo of tiposHabitacion; track tipo) {
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" [value]="tipo" formControlName="tipoHab" [id]="tipo">
+                        <label class="form-check-label" [for]="tipo">{{ tipo }}</label>
+                    </div>
+                }
+
+                @if (form.get('tipoHab')?.touched && form.get('tipoHab')?.hasError('required')) {
+                    <div class="msj">Debes seleccionar un tipo de habitación.</div>
+                }
+            </div>
+
+            <!-- Número de personas -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="floatingInput3" formControlName="numPersonas" min="1">
+                <label for="floatingInput3">Número de personas</label>
+                @if (form.get('numPersonas')?.touched && form.get('numPersonas')?.errors) {
+                    @if (form.get('numPersonas')?.hasError('required')) {
+                        <div class="msj">Este campo es obligatorio.</div>
+                    }
+                    @if (form.get('numPersonas')?.hasError('min')) {
+                        <div class="msj">Debe ser al menos 1 persona.</div>
+                    }
+                    @if (form.get('numPersonas')?.hasError('max')) {
+                        <div class="msj">El hospedaje es para maximo 8 personas.</div>
+                    }
+                }
+            </div>
+
+            <button class="btn btn-enviar" type="submit" [disabled]="form.invalid">Enviar formulario</button>
+        </form>
+    </div>
+</section>

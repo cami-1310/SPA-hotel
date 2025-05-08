@@ -37,8 +37,8 @@ export const Habitaciones:Habitacion[]=[
     {
         tipo: "Cabaña Familiar",
         noRecamaras: 2,
-        noCamas: 6,
-        tipoCama: "Individual",
+        noCamas: 4,
+        tipoCama: "Matrimonial",
         noPersonas: "4 a 8",
         noBanos: 2,
         descripcion: "Cabaña familiar con dos recámaras, cada una con dos camas matrimoniales. Espaciosa y cómoda, ideal para grupos grandes o familias numerosas.",
