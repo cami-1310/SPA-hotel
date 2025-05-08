@@ -1,0 +1,14 @@
+.cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.button{
+    background-color: #A0C878 !important;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    font-family: "Montserrat", sans-serif !important;
+}
