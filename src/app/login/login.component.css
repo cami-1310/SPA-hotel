@@ -3,17 +3,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 90%;
+    margin: 40px;
 }
 
 .label-custom,
 .button,
-input{
+input,
+mat-form-field{
     font-family: "Montserrat", sans-serif !important;
 }
 
+mat-form-field,
 .button{
-    background-color: #A0C878 !important;
+    width: 350px;
+}
+
+.button{
+    background-color: #27667B !important;
     border-radius: 10px;
     transition: background-color 0.3s ease;
+}
+
+.button:hover{
+    background-color: #A0C878 !important;
 }

@@ -36,7 +36,9 @@
       </div>
     </div>
   </div>
-  <button class=" btn btn-reservar">Reservar</button>
+  <a [routerLink]="['/reservar']">
+    <button class="btn btn-reservar">Reservar</button>
+  </a>
 </div>
 
 <div class="modal fade" id="contModal" tabindex="-1" aria-labelledby="imgModalLabel" aria-hidden="true">
@@ -87,7 +89,12 @@
                   <li><strong>Baños:</strong> {{ habitacionSeleccionada.noBanos }}</li>
               </ul>
             </div>
-            <button class=" btn btn-reservar">Reservar</button>
+
+            <hr>
+            
+            <a [routerLink]="['/reservar']" class="a-modal">
+              <button class="btn btn-reservar-modal" (click)="closeModal()">Reservar</button>
+            </a>
           </div>
         }
       </div>
