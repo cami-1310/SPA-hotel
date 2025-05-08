@@ -6,9 +6,14 @@
     min-height: 100vh;
 }
 
+.label-custom,
+.button,
+input{
+    font-family: "Montserrat", sans-serif !important;
+}
+
 .button{
     background-color: #A0C878 !important;
     border-radius: 10px;
     transition: background-color 0.3s ease;
-    font-family: "Montserrat", sans-serif !important;
 }
