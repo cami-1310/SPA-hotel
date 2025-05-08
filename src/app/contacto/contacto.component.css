@@ -27,6 +27,7 @@
 }
 
 .devs-info{
+  justify-content: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
@@ -71,4 +72,9 @@
 
 textarea{
   resize: none;
+}
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-bottom: 10px;
 }
