@@ -1,24 +1,22 @@
-<div class="cont">
-    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="#27667B" viewBox="0 0 16 16">
-        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-    </svg>
-      
+<div class="cont" [formGroup]="loginForm">
+    <mat-icon>person</mat-icon>
+
     <h5>Inicia sesion</h5>
 
     <mat-form-field>
         <mat-label class="label-custom">Nombre completo</mat-label>
-        <input matInput required>
+        <input matInput required formControlName="nombreCompleto">
     </mat-form-field>
 
     <mat-form-field>
         <mat-label class="label-custom">Nombre de usuario</mat-label>
-        <input matInput required>
+        <input matInput required formControlName="username">
     </mat-form-field>
 
     <mat-form-field>
         <mat-label class="label-custom">Contraseña</mat-label>
-        <input matInput type="password" required="">
+        <input matInput type="password" required formControlName="password">
     </mat-form-field>
 
-    <button mat-flat-button class="button">Ingresar</button>
+    <button mat-flat-button class="button" (click)="compararCredenciales()">Ingresar</button>
 </div>

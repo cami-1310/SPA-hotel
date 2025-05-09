@@ -7,6 +7,13 @@
     margin: 40px;
 }
 
+mat-icon{
+    color: #27667B;
+    font-size: 150px;
+    width: 150px;
+    height: 150px;
+}
+
 .label-custom,
 .button,
 input,
