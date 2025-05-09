@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
 import { FormsModule } from '@angular/forms';
@@ -23,17 +17,24 @@ export class ContactoComponent {
     mensaje: ''
   };
 
-  paises: string[] = ['México', 'Argentina', 'Colombia', 'Chile', 'Perú'];
+  paises: string[] = [
+  'México',
+  'Argentina',
+  'Colombia',
+  'Perú',
+  'Chile',
+  'Venezuela',
+  'Ecuador',
+  'Guatemala',
+  'Bolivia',
+  'Uruguay',
+  'cuba'
+];
+
 
   guardarDatos(form: any) {
     if (form.invalid) {
       form.form.markAllAsTouched(); 
-      Swal.fire({
-        icon: 'error',
-        title: 'Formulario inválido',
-        text: 'Por favor, corrige los errores antes de enviar.'
-      });
-
       return;
     }
 
@@ -44,7 +45,7 @@ export class ContactoComponent {
     Swal.fire({
       icon: 'success',
       title: 'Comentario enviado',
-      text: 'Gracias por tu mensaje'
+      text: 'Gracias por tu mensaje:)'
     });
 
     form.resetForm();

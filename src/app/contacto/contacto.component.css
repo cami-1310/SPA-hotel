@@ -65,6 +65,10 @@
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
+.contact-form button:disabled{
+  background-color: #97a5aa  !important;
+  cursor: not-allowed;
+}
 
 .contact-form button:hover {
   background-color: #A0C878;
@@ -77,4 +81,8 @@ textarea{
   color: red;
   font-size: 0.9em;
   margin-bottom: 10px;
+}
+
+.devs-info img{
+  border-radius: 10px;
 }

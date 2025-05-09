@@ -28,7 +28,7 @@
       <form #contactForm="ngForm" (ngSubmit)="guardarDatos(contactForm)" class="contact-form">
         <h3>Haznos llegar tu comentario</h3>
 
-        <!-- Nombre -->
+        <!-- nombre -->
         <label for="nombre">Nombre</label>
         <input type="text" id="nombre" name="nombre" [(ngModel)]="formData.nombre"
               required pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$" #nombre="ngModel" placeholder="Tu nombre">
@@ -43,7 +43,7 @@
           </div>
         }
 
-        <!-- Correo -->
+        <!-- correo -->
         <label for="email">Correo electrónico</label>
         <input type="email" id="email" name="email" [(ngModel)]="formData.email"
               required email #email="ngModel" placeholder="correo@example.com">
@@ -58,7 +58,7 @@
           </div>
         }
 
-        <!-- Nacionalidad -->
+        <!-- nacionalidad -->
         <label for="nacionalidad">Nacionalidad</label>
         <select id="nacionalidad" name="nacionalidad" [(ngModel)]="formData.nacionalidad"
                 required #nacionalidad="ngModel">
@@ -71,7 +71,7 @@
           <div class="error">La nacionalidad es obligatoria.</div>
         }
 
-        <!-- Comentario -->
+        <!-- ccomentario -->
         <label for="mensaje">Mensaje</label>
         <textarea id="mensaje" name="mensaje" [(ngModel)]="formData.mensaje"
                   required maxlength="150" #mensaje="ngModel" rows="5"
@@ -87,7 +87,7 @@
           </div>
         }
 
-        <button type="submit">Enviar</button>
+        <button type="submit" [disabled]="!contactForm.valid">Enviar</button>
       </form>
 
 
