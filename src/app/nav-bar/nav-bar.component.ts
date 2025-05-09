@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,5 +9,19 @@ import { RouterModule } from '@angular/router';
   styleUrl: './nav-bar.component.css'
 })
 export class NavBarComponent {
+  username: string='';
 
+  constructor(private loginService: LoginService, private router: Router){ }
+
+  ngOnInit(){
+    this.username=this.loginService.username;
+  }
+
+  salir(){
+    this.loginService.logout();
+    this.username=this.loginService.username;
+    this.router.navigate(['/home']).then(() => {
+      window.location.reload();
+    });
+  }
 }

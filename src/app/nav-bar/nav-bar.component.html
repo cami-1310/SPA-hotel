@@ -12,23 +12,44 @@
         <a [routerLink]="['/contacto']">
             <span>Contacto</span>
         </a>
-        <a [routerLink]="['/login']">
-            <svg xmlns="http://www.w3.org/2000/svg"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                >
-                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-            </svg>
-        </a>
         <a [routerLink]="['/reservar']">
-            <button class="btn btn-reservar">Reservar</button>
+            <button class="btn btn-format">Reservar</button>
         </a>
+
+        @if(username){
+            <a href="#" class="admin">
+                <button class="btn btn-format">{{username}}</button>
+            </a>
+            <button class="btn-logout" (click)="salir()">
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    width="40" 
+                    height="40" 
+                    stroke-width="1" > 
+                    <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"></path> 
+                    <path d="M9 12h12l-3 -3"></path> 
+                    <path d="M18 15l3 -3"></path> 
+                </svg> 
+            </button>
+        } @else {
+            <a [routerLink]="['/login']">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" >
+                    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                </svg>
+            </a>
+        }
     </div>
 </nav>
