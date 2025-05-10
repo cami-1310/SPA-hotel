@@ -11,7 +11,6 @@
   
 .contact-section p {
   font-size: 16px;
-  color: #555;
 }
   
 .contenedor{
@@ -26,11 +25,30 @@
   flex-direction: column;
 }
 
-.devs-info{
-  justify-content: center;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+.contact-info{
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #27667B;
+  color: white;
+}
+
+.changes{
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #A0C878;
+  margin-top: 20px;
+  color: white;
+}
+
+.div1{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+}
+
+.div1 p{
+  margin: 0;
 }
   
 .contact-form {
@@ -56,15 +74,16 @@
 
 .contact-form button {
   margin-top: 20px;
-  padding: 12px;
+  padding: 5px;
   background-color: #27667B;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
+
 .contact-form button:disabled{
   background-color: #97a5aa  !important;
   cursor: not-allowed;
@@ -77,12 +96,19 @@
 textarea{
   resize: none;
 }
+
 .error {
   color: red;
   font-size: 0.9em;
   margin-bottom: 10px;
 }
 
-.devs-info img{
-  border-radius: 10px;
+#nacionalidad{
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  color: #8d8d8d;
+  margin-top: 5px;
 }
