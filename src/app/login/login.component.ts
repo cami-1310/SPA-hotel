@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
+  standalone:true,
   imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',

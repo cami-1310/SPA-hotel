@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-habitaciones',
+  standalone:true,
   imports: [CarouselComponent, RouterModule],
   templateUrl: './habitaciones.component.html',
   styleUrl: './habitaciones.component.css'

@@ -1,0 +1,26 @@
+<div class="reloj-container">
+  <h2>Hora actual en las principales ciudades de Suiza</h2>
+
+  @if (horas.length>0) {
+    <table>
+      <thead>
+        <tr>
+          <th>Ciudad</th>
+          <th>Hora actual</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (hora of horas; track hora) {
+          <tr>
+            <td>{{ hora.ciudad }}</td>
+            <td>{{ hora.hora }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  } @else {
+    <p>Cargando horas...</p>
+  }
+
+  <button (click)="actualizarHoras()">Actualizar</button>
+</div>
