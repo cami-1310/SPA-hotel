@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-registro-comentarios',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './registro-comentarios.component.html',
   styleUrls: ['./registro-comentarios.component.css']
 })
@@ -14,6 +15,8 @@ export class RegistroComentariosComponent {
     email: string;
     nacionalidad: string;
     mensaje: string;
+    editando?: boolean;
+    copia?: any; // Para cancelar edición
   }[] = [];
 
   constructor() {
@@ -26,5 +29,31 @@ export class RegistroComentariosComponent {
         this.comentarios = [];
       }
     }
+  }
+
+  editarComentario(comentario: any) {
+    comentario.editando = true;
+    comentario.copia = { ...comentario }; // Guarda una copia por si se cancela
+  }
+
+  guardarEdicion(comentario: any) {
+    delete comentario.editando;
+    delete comentario.copia;
+    this.actualizarLocalStorage();
+  }
+
+  cancelarEdicion(comentario: any) {
+    Object.assign(comentario, comentario.copia);
+    delete comentario.editando;
+    delete comentario.copia;
+  }
+
+  eliminarComentario(index: number) {
+    this.comentarios.splice(index, 1);
+    this.actualizarLocalStorage();
+  }
+
+  private actualizarLocalStorage() {
+    localStorage.setItem('comentarios', JSON.stringify(this.comentarios));
   }
 }

@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-reservar',
+  standalone:true,
   imports: [ReactiveFormsModule],
   templateUrl: './reservar.component.html',
   styleUrl: './reservar.component.css'

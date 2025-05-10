@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { ReservarComponent } from './reservar/reservar.component';
 import { RegistroComentariosComponent } from './registro-comentarios/registro-comentarios.component';
 import { RegistroReservasComponent } from './registro-reservas/registro-reservas.component';
+import { ZonasHorariasComponent } from './zonas-horarias/zonas-horarias.component';
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'servicios', component: ServiciosComponent },
@@ -16,6 +17,7 @@ export const routes: Routes = [
     {path: 'reservar', component: ReservarComponent},
     {path: 'registroComentarios',component: RegistroComentariosComponent},
     {path: 'registroReservas',component: RegistroReservasComponent},
+    {path: 'zonasHorarias', component:ZonasHorariasComponent},
     
     {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
