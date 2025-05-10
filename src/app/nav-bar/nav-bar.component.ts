@@ -20,6 +20,7 @@ export class NavBarComponent {
   salir(){
     this.loginService.logout();
     this.username=this.loginService.username;
+    //redirige a home y luego recarga la pagina
     this.router.navigate(['/home']).then(() => {
       window.location.reload();
     });

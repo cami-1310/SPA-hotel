@@ -7,6 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { ReservarComponent } from './reservar/reservar.component';
 import { RegistroComentariosComponent } from './registro-comentarios/registro-comentarios.component';
 import { RegistroReservasComponent } from './registro-reservas/registro-reservas.component';
+import { DevsComponent } from './devs/devs.component';
+import { DevComponent } from './dev/dev.component';
+import { VistaAPIComponent } from './vista-api/vista-api.component';
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'servicios', component: ServiciosComponent },
@@ -16,6 +19,8 @@ export const routes: Routes = [
     {path: 'reservar', component: ReservarComponent},
     {path: 'registroComentarios',component: RegistroComentariosComponent},
     {path: 'registroReservas',component: RegistroReservasComponent},
-    
+    {path: 'sobreSitio', component: DevsComponent},
+    {path: 'dev/:id', component: DevComponent},
+    {path: 'API', component: VistaAPIComponent},
     {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];

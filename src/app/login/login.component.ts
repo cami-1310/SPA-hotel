@@ -54,6 +54,7 @@ export class LoginComponent {
           title: "Bienvenido administrador",
           icon: "success"
         }).then(() => {
+          //redirige a home y luego recarga la pagina
           this.router.navigate(['/home']).then(() => {
             window.location.reload();
           });

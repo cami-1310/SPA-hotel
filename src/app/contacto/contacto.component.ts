@@ -28,7 +28,7 @@ export class ContactoComponent {
   'Guatemala',
   'Bolivia',
   'Uruguay',
-  'cuba'
+  'Cuba'
 ];
 
 
