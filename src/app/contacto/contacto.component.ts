@@ -1,12 +1,17 @@
 
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-contacto',
   standalone:true,
-  imports: [FormsModule],
+  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule,MatSelectModule],
   templateUrl: './contacto.component.html',
   styleUrl: './contacto.component.css'
 })

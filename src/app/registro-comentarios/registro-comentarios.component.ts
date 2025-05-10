@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-registro-comentarios',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule, CommonModule,MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule],
   templateUrl: './registro-comentarios.component.html',
   styleUrls: ['./registro-comentarios.component.css']
 })

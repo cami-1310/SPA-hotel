@@ -60,13 +60,15 @@
 
         <!-- nacionalidad -->
         <label for="nacionalidad">Nacionalidad</label>
-        <select id="nacionalidad" name="nacionalidad" [(ngModel)]="formData.nacionalidad"
-                required #nacionalidad="ngModel">
-          <option value="" disabled selected>Selecciona tu nacionalidad</option>
-          @for (pais of paises; track pais) {
-            <option [value]="pais">{{ pais }}</option>
-          }
-        </select>
+        <mat-form-field>
+          <mat-label>Select</mat-label>
+          <mat-select id="nacionalidad" name="nacionalidad" [(ngModel)]="formData.nacionalidad" required #nacionalidad="ngModel">   
+            @for (pais of paises; track pais) {
+              <mat-option [value]="pais">{{ pais }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+
         @if (nacionalidad.invalid && nacionalidad.touched) {
           <div class="error">La nacionalidad es obligatoria.</div>
         }
