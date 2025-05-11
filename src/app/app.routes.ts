@@ -9,7 +9,6 @@ import { RegistroComentariosComponent } from './registro-comentarios/registro-co
 import { RegistroReservasComponent } from './registro-reservas/registro-reservas.component';
 import { DevsComponent } from './devs/devs.component';
 import { DevComponent } from './dev/dev.component';
-import { ZonasHorariasComponent } from './zonas-horarias/zonas-horarias.component';
 import { VistaAPIComponent } from './vista-api/vista-api.component';
 
 export const routes: Routes = [
