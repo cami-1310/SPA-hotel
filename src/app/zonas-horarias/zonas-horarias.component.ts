@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
@@ -10,6 +10,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
   styleUrls: ['./zonas-horarias.component.css']
 })
 export class ZonasHorariasComponent implements OnInit {
+  @Input() termino: string="";
+  sinResultados: boolean=false;
   horas: { ciudad: string; hora: string }[] = [];
 
   ciudades = [
@@ -31,6 +33,12 @@ export class ZonasHorariasComponent implements OnInit {
     this.actualizarHoras();
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['termino']) {
+      this.actualizarHoras();
+    }
+  }
+
   actualizarHoras() {
     this.horas = [];
     this.ciudades.forEach(ciudad => {
@@ -40,5 +48,12 @@ export class ZonasHorariasComponent implements OnInit {
           this.horas.push({ ciudad: ciudad.nombre, hora });
         });
     });
+  }
+
+  filtrarCiudades() {
+    const terminoLower = this.termino.toLowerCase();
+    return this.ciudades.filter(ciudad =>
+      ciudad.nombre.toLowerCase().includes(terminoLower)
+    );
   }
 }
