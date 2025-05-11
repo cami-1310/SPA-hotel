@@ -12,7 +12,7 @@
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput0" formControlName="nombre">
                 <label for="floatingInput0">Nombre del titular de la reservación</label>
-                @if (form.get('nombre')?.touched && form.get('nombre')?.errors) {
+                @if (form.get('nombre')?.invalid && form.get('nombre')?.touched) {
                     @if (form.get('nombre')?.hasError('required')) {
                         <div class="msj">El nombre es obligatorio.</div>
                     }
@@ -26,12 +26,12 @@
             <div class="form-floating mb-3">
                 <input type="date" class="form-control" id="floatingInput1" formControlName="fechaIngreso">
                 <label for="floatingInput1">Fecha de llegada</label>
-                @if (form.get('fechaIngreso')?.touched && form.get('fechaIngreso')?.errors) {
+                @if (form.get('fechaIngreso')?.invalid && form.get('fechaIngreso')?.touched) {
                     @if (form.get('fechaIngreso')?.hasError('required')) {
                         <div class="msj">La fecha de llegada es obligatoria.</div>
                     }
                     @if (form.get('fechaIngreso')?.hasError('fechaPasada')) {
-                        <div class="msj">La fecha no puede ser anterior a hoy.</div>
+                        <div class="msj">Tu fecha de llegada debe ser posterior a la de hoy.</div>
                     }
                 }
             </div>
@@ -40,16 +40,16 @@
             <div class="form-floating mb-3">
                 <input type="date" class="form-control" id="floatingInput2" formControlName="fechaSalida">
                 <label for="floatingInput2">Fecha de salida</label>
-                @if (form.get('fechaSalida')?.touched && form.get('fechaSalida')?.errors) {
+                @if (form.get('fechaSalida')?.invalid && form.get('fechaSalida')?.touched) {
                     @if (form.get('fechaSalida')?.hasError('required')) {
                         <div class="msj">La fecha de salida es obligatoria.</div>
                     }
-                    @if (form.get('fechaSalida')?.hasError('fechaPasada')) {
-                        <div class="msj">La fecha no puede ser anterior a hoy.</div>
-                    }
-                    @if (form.errors?.['fechasInvalidas']) {
-                        <div class="msj">La fecha de salida debe ser posterior a la fecha de llegada.</div>
-                    }
+                }
+                @if (form.errors?.['fechasInvalidas']) {
+                    <div class="msj">La fecha de salida debe ser posterior a la fecha de llegada.</div>
+                }
+                @if (form.errors?.['estanciaInvalida']) {
+                    <div class="msj">Tu estancia debe ser de mas de 1 dia.</div>
                 }
             </div>
 
@@ -73,7 +73,7 @@
             <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="floatingInput3" formControlName="numPersonas" min="1">
                 <label for="floatingInput3">Número de personas</label>
-                @if (form.get('numPersonas')?.touched && form.get('numPersonas')?.errors) {
+                @if (form.get('numPersonas')?.invalid && form.get('numPersonas')?.touched) {
                     @if (form.get('numPersonas')?.hasError('required')) {
                         <div class="msj">Este campo es obligatorio.</div>
                     }
@@ -81,8 +81,11 @@
                         <div class="msj">Debe ser al menos 1 persona.</div>
                     }
                     @if (form.get('numPersonas')?.hasError('max')) {
-                        <div class="msj">El hospedaje es para maximo 8 personas.</div>
+                        <div class="msj">El hospedaje maximo es de 8 personas.</div>
                     }
+                }
+                @if (form.errors?.['maxPorTipo']) {
+                    <div class="msj">En esta cabaña solo pueden hospedarse {{ form.errors?.['maxPorTipo'] }} personas como máximo.</div>
                 }
             </div>
             <button class="btn-enviar" type="submit" [disabled]="form.invalid">Crear reservación</button>
