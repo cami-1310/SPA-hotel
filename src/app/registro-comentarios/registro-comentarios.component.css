@@ -68,3 +68,9 @@ button.eliminar {
 button.eliminar:hover {
   background-color: #c9302c;
 }
+.enlinea{
+  display: flex;
+  flex-direction: row;
+  gap: 6px; 
+  align-items: flex-start; 
+}
