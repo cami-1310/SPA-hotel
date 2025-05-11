@@ -55,7 +55,7 @@ export class ReservarComponent {
       this.form.reset();
 
       Swal.fire({
-        title: "Formulario enviado!",
+        title: "Reservacion lista!",
         text: "Datos guardados con exito",
         icon: "success"
       });

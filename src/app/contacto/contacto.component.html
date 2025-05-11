@@ -6,20 +6,32 @@
     <div class="contact-content">
       <div class="contact-info">
         <h3>Información</h3>
-        <p><strong>Teléfono: </strong>41 44 123 45 67</p>
+        <p><strong>Teléfono: </strong>+41 44 123 45 67</p>
         <p><strong>Correo: </strong>Stillalphotel&#64;gmail.com</p>
         <p><strong>Dirección: </strong>#15 Bahnhofstrasse, #8001 Zürich,Suiza</p>
         <p><strong>Horario: </strong> Lunes a Domingo, 8:00 am – 10:00 pm</p>
       </div>
 
-      <div class="devs-info">
-        <div>
-          <img src="rafa.png" width="150">
-          <p>Rafael Marquez Macías <br>350426<br>ISC 6A</p>
-        </div>
-        <div>
-          <img src="camila.png" width="150" alt="">
-          <p>Camila Jassiel Mendoza Martinez <br>347948<br>ISC 6A</p>
+      <div class="changes">
+        <p>Si alguno de los datos que ingresaste en el formulario fue erróneo
+        y deseas cambiarlo, puedes enviar un mensaje al Whatsapp:
+        </p>
+        <div class="div1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="35"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+            <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+          </svg>
+          <p>+41 31 456 78 90</p>
         </div>
       </div>
     </div>
@@ -30,8 +42,7 @@
 
         <!-- nombre -->
         <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" [(ngModel)]="formData.nombre"
-              required pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$" #nombre="ngModel" placeholder="Tu nombre">
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="formData.nombre" required pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$" #nombre="ngModel" placeholder="Tu nombre">
         @if (nombre.invalid && nombre.touched) {
           <div class="error">
             @if (nombre.errors?.['required']) {

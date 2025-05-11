@@ -1,6 +1,7 @@
 body{
     font-family: "Montserrat", sans-serif !important;
     display: block;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -8,4 +9,3 @@ body{
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -66,6 +66,20 @@
   </div>
 </section>
 
+<section class="video">
+  <h1>Un vistazo a lo que te estas perdiendo...</h1>
+  <iframe 
+    width="560" 
+    height="315" 
+    [src]="video | domSeguro: 'https://www.youtube.com/embed/'"
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+  </iframe>
+</section>
+
 <section>
   <div class="card-group">
     <div class="card">
