@@ -70,7 +70,7 @@ button.eliminar:hover {
 }
 .enlinea{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 6px; 
   align-items: flex-start; 
 }
