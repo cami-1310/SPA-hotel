@@ -14,4 +14,3 @@ export class ZHorariasService {
     return firstValueFrom(this.http.get<any>(url));
   }
 }
-

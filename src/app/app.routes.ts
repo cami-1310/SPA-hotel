@@ -9,8 +9,8 @@ import { RegistroComentariosComponent } from './registro-comentarios/registro-co
 import { RegistroReservasComponent } from './registro-reservas/registro-reservas.component';
 import { DevsComponent } from './devs/devs.component';
 import { DevComponent } from './dev/dev.component';
-import { VistaAPIComponent } from './vista-api/vista-api.component';
 import { ZonasHorariasComponent } from './zonas-horarias/zonas-horarias.component';
+import { VistaAPIComponent } from './vista-api/vista-api.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -23,7 +23,6 @@ export const routes: Routes = [
     {path: 'registroReservas',component: RegistroReservasComponent},
     {path: 'sobreSitio', component: DevsComponent},
     {path: 'dev/:id', component: DevComponent},
-    {path: 'API', component: VistaAPIComponent},
-    {path: 'zonasHorarias', component:ZonasHorariasComponent},
+    {path: 'api', component: VistaAPIComponent},
     {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
