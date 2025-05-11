@@ -11,9 +11,10 @@ import { RegistroReservasComponent } from '../registro-reservas/registro-reserva
   styleUrl: './switch-local.component.css'
 })
 export class SwitchLocalComponent {
-  vistaActual: 'reservas' | 'comentarios' = 'reservas';
+  vista: 'reservas' | 'comentarios' = 'reservas';
 
   cambiarVista(vista: 'reservas' | 'comentarios') {
-    this.vistaActual = vista;
+    this.vista = vista;
   }
+
 }

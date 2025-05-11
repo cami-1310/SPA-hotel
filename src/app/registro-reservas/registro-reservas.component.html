@@ -14,7 +14,7 @@
       </thead>
       <tbody>
         @for (reserva of reservas; let i = $index; track reserva) {
-          <tr>
+          <tr [ngStyle]="reserva.editando ? {'background-color': '#f0fff0'} : {}">
             <td>
               @if (reserva.editando) {
                 <input [(ngModel)]="reserva.nombre">

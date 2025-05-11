@@ -14,7 +14,7 @@
       </thead>
       <tbody>
         @for (comentario of comentarios; let i = $index; track comentario) {
-          <tr>
+          <tr [ngStyle]="comentario.editando ? {'background-color': '#f0fff0'} : {}">
             <td>
               @if (comentario.editando) {
                 <mat-form-field>
