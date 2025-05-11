@@ -73,7 +73,7 @@
         <label for="nacionalidad">Nacionalidad</label>
         <mat-form-field>
           <mat-label>Select</mat-label>
-          <mat-select id="nacionalidad" name="nacionalidad" [(ngModel)]="formData.nacionalidad" required #nacionalidad="ngModel">   
+          <mat-select  name="nacionalidad" [(ngModel)]="formData.nacionalidad" required #nacionalidad="ngModel">   
             @for (pais of paises; track pais) {
               <mat-option [value]="pais">{{ pais }}</mat-option>
             }
