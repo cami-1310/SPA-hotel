@@ -1,1 +1,69 @@
-<p>registro-reservas works!</p>
+<div class="tabla-container">
+  @if (reservas.length > 0) {
+    <h2>Reservaciones Registradas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Ingreso</th>
+          <th>Salida</th>
+          <th>Tipo</th>
+          <th>Personas</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (reserva of reservas; let i = $index; track reserva) {
+          <tr>
+            <td>
+              @if (reserva.editando) {
+                <input [(ngModel)]="reserva.nombre">
+              } @else {
+                {{ reserva.nombre }}
+              }
+            </td>
+            <td>
+              @if (reserva.editando) {
+                <input type="date" [(ngModel)]="reserva.fechaIngreso">
+              } @else {
+                {{ reserva.fechaIngreso }}
+              }
+            </td>
+            <td>
+              @if (reserva.editando) {
+                <input type="date" [(ngModel)]="reserva.fechaSalida">
+              } @else {
+                {{ reserva.fechaSalida }}
+              }
+            </td>
+            <td>
+              @if (reserva.editando) {
+                <input [(ngModel)]="reserva.tipoHab">
+              } @else {
+                {{ reserva.tipoHab }}
+              }
+            </td>
+            <td>
+              @if (reserva.editando) {
+                <input type="number" [(ngModel)]="reserva.numPersonas">
+              } @else {
+                {{ reserva.numPersonas }}
+              }
+            </td>
+            <td>
+              @if (!reserva.editando) {
+                <button (click)="editarReserva(reserva)"><mat-icon>edit</mat-icon></button>
+              } @else {
+                <button (click)="guardarEdicion(reserva)">Guardar</button>
+                <button (click)="cancelarEdicion(reserva)">Cancelar</button>
+              }
+              <button (click)="eliminarReserva(i)" class="eliminar"><mat-icon>delete</mat-icon></button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  } @else {
+    <p>No hay reservaciones registradas.</p>
+  }
+</div>

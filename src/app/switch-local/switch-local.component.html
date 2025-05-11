@@ -1,0 +1,24 @@
+<div class="switch-container">
+  <button 
+    class="switch-button" 
+    [class.active]="vistaActual === 'reservas'" 
+    (click)="cambiarVista('reservas')">
+    Reservas
+  </button>
+
+  <button 
+    class="switch-button" 
+    [class.active]="vistaActual === 'comentarios'" 
+    (click)="cambiarVista('comentarios')">
+    Comentarios
+  </button>
+</div>
+
+<div class="contenido">
+  @if (vistaActual === 'reservas') {
+
+    <app-registro-reservas></app-registro-reservas>
+  } @else {
+    <app-registro-comentarios></app-registro-comentarios>
+  }
+</div>

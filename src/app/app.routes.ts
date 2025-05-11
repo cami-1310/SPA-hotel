@@ -11,6 +11,7 @@ import { DevsComponent } from './devs/devs.component';
 import { DevComponent } from './dev/dev.component';
 import { VistaAPIComponent } from './vista-api/vista-api.component';
 import { DestinosComponent } from './destinos/destinos.component';
+import { SwitchLocalComponent } from './switch-local/switch-local.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -24,5 +25,6 @@ export const routes: Routes = [
     {path: 'sobreSitio', component: DevsComponent},
     {path: 'dev/:id', component: DevComponent},
     {path: 'destinos', component: DestinosComponent},
+    {path: 'switch',component:SwitchLocalComponent},
     {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
