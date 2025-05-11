@@ -93,6 +93,11 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.video iframe:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
 .card-group {
     display: flex;
     flex-wrap: wrap;
@@ -118,8 +123,7 @@
 }
   
 .card:hover,
-.home-img img:hover,
-.video iframe:hover{
+.home-img img:hover{
     transform: translateY(-6px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }

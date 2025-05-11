@@ -10,6 +10,7 @@ import { RegistroReservasComponent } from './registro-reservas/registro-reservas
 import { DevsComponent } from './devs/devs.component';
 import { DevComponent } from './dev/dev.component';
 import { VistaAPIComponent } from './vista-api/vista-api.component';
+import { DestinosComponent } from './destinos/destinos.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -22,6 +23,6 @@ export const routes: Routes = [
     {path: 'registroReservas',component: RegistroReservasComponent},
     {path: 'sobreSitio', component: DevsComponent},
     {path: 'dev/:id', component: DevComponent},
-    {path: 'api', component: VistaAPIComponent},
+    {path: 'destinos', component: DestinosComponent},
     {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];

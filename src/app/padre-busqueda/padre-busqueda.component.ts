@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { BarraBusquedaComponent } from '../barra-busqueda/barra-busqueda.component';
-import { ZonasHorariasComponent } from '../zonas-horarias/zonas-horarias.component';
+import { VistaAPIComponent } from '../vista-api/vista-api.component';
 
 @Component({
   selector: 'app-padre-busqueda',
-  imports: [BarraBusquedaComponent, ZonasHorariasComponent],
+  imports: [BarraBusquedaComponent, VistaAPIComponent],
   templateUrl: './padre-busqueda.component.html',
   styleUrl: './padre-busqueda.component.css'
 })
