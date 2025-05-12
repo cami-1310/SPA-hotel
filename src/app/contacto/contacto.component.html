@@ -104,13 +104,14 @@
         </mat-form-field>
         
         @if (mensaje.invalid && mensaje.touched) {
-          <div class="error">
-            @if (mensaje.errors?.['required']) {
+          @if (mensaje.errors?.['required']) {
+            <div class="error">
               El mensaje es obligatorio.
-            }
-            @if (mensaje.errors?.['maxlength']) {
-              El mensaje no puede superar los 150 caracteres.
-            }
+            </div>
+          }
+        } @else if (formData.mensaje.length === 150) {
+          <div class="error">
+            El mensaje no puede superar los 150 caracteres.
           </div>
         }
 
