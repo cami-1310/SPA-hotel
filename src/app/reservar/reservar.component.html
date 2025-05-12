@@ -30,9 +30,9 @@
                     @if (form.get('fechaIngreso')?.hasError('required')) {
                         <div class="msj">La fecha de llegada es obligatoria.</div>
                     }
-                    @if (form.get('fechaIngreso')?.hasError('fechaPasada')) {
-                        <div class="msj">Tu fecha de llegada debe ser posterior a la de hoy.</div>
-                    }
+                }
+                @if (form.errors?.['fechaPasada']) {
+                    <div class="msj">Tu fecha de llegada debe ser posterior a la de hoy.</div>
                 }
             </div>
 
@@ -49,7 +49,7 @@
                     <div class="msj">La fecha de salida debe ser posterior a la fecha de llegada.</div>
                 }
                 @if (form.errors?.['estanciaInvalida']) {
-                    <div class="msj">Tu estancia debe ser de mas de 1 dia.</div>
+                    <div class="msj">Tu estancia debe ser de al menos 1 dia.</div>
                 }
             </div>
 
@@ -79,9 +79,6 @@
                     }
                     @if (form.get('numPersonas')?.hasError('min')) {
                         <div class="msj">Debe ser al menos 1 persona.</div>
-                    }
-                    @if (form.get('numPersonas')?.hasError('max')) {
-                        <div class="msj">El hospedaje maximo es de 8 personas.</div>
                     }
                 }
                 @if (form.errors?.['maxPorTipo']) {

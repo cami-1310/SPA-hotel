@@ -2,16 +2,14 @@
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-contacto',
   standalone:true,
-  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule,MatSelectModule],
+  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatSelectModule],
   templateUrl: './contacto.component.html',
   styleUrl: './contacto.component.css'
 })
@@ -24,19 +22,18 @@ export class ContactoComponent {
   };
 
   paises: string[] = [
-  'México',
-  'Argentina',
-  'Colombia',
-  'Perú',
-  'Chile',
-  'Venezuela',
-  'Ecuador',
-  'Guatemala',
-  'Bolivia',
-  'Uruguay',
-  'Cuba'
-];
-
+    'México',
+    'Argentina',
+    'Colombia',
+    'Perú',
+    'Chile',
+    'Venezuela',
+    'Ecuador',
+    'Guatemala',
+    'Bolivia',
+    'Uruguay',
+    'Cuba'
+  ];
 
   guardarDatos(form: any) {
     if (form.invalid) {
