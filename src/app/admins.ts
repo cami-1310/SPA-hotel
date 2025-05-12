@@ -2,7 +2,7 @@ import { Admin } from "./admin";
 
 export const Admins: Admin[]=[
     {
-        nombreCompleto: "Rafael",
+        nombreCompleto: "Rafael Marquez Macias",
         username: "rafaMqz",
         password: "12345678"
     },
