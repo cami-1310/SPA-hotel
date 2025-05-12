@@ -1,11 +1,9 @@
 .tabla-container {
-  margin: 50px auto;
-  width: 100%;
-  padding: 30px;
-  background-color: #f5f5f5;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  margin: 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .tabla-container h2 {
@@ -17,9 +15,10 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: white;
+  background-color: #f5f5f5;
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 th {
@@ -40,6 +39,14 @@ th {
   background-color: #A0C878;
   color: white;
   font-weight: 500;
+}
+
+td input {
+  max-width: 200px;
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 5px;
 }
 
 p {

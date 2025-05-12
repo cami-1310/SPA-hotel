@@ -17,22 +17,23 @@ export class ReservarComponent {
   constructor(private fb: FormBuilder){
     this.form=this.fb.group({
       nombre: ['', [Validators.required, Validators.pattern("^[A-Za-zÁÉÍÓÚÑáéíóúñ]+(?: [A-Za-zÁÉÍÓÚÑáéíóúñ]+)*$")]],
-      fechaIngreso: ['', [Validators.required, this.fechaNoPasada()]],
-      fechaSalida: ['', [Validators.required, this.fechaNoPasada()]],
+      fechaIngreso: ['', Validators.required],
+      fechaSalida: ['', Validators.required],
       tipoHab: ['', Validators.required],
-      numPersonas: ['', [Validators.required, Validators.min(1), Validators.max(8)]]
-    }, { validators: [this.fechasCoherentes(), this.maxPersonas()] });
+      numPersonas: ['', [Validators.required, Validators.min(1)]]
+    }, { validators: [this.fechaNoPasada(), this.fechasCoherentes(), this.maxPersonas()] });
   }
 
   fechaNoPasada(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
-      const valor = control.value;
-  
+      const ingreso=control.get('fechaIngreso')?.value;
+      const fechaIngreso = new Date(ingreso);
+      fechaIngreso.setHours(0, 0, 0, 0);
+
       const hoy = new Date();
       hoy.setHours(0, 0, 0, 0);
-      const fechaIngresada = new Date(valor);
-  
-      if(fechaIngresada < hoy){
+
+      if(fechaIngreso < hoy){
         return { fechaPasada: true };
       } else {
         return null;

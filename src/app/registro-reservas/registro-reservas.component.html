@@ -55,8 +55,8 @@
                 @if (!reserva.editando) {
                   <button (click)="editarReserva(reserva)"><mat-icon>edit</mat-icon></button>
                 } @else {
-                  <button (click)="guardarEdicion(reserva)" [disabled]="!reserva.numPersonas || !reserva.fechaSalida || !reserva.fechaIngreso || !reserva.nombre">Guardar</button>
-                  <button (click)="cancelarEdicion(reserva)">Cancelar</button>
+                  <button (click)="guardarEdicion(reserva)" [disabled]="!reserva.numPersonas || !reserva.fechaSalida || !reserva.fechaIngreso || !reserva.nombre"><mat-icon>check</mat-icon></button>
+                  <button (click)="cancelarEdicion(reserva)"><mat-icon>close</mat-icon></button>
                 }
                 <button (click)="eliminarReserva(i)" class="eliminar"><mat-icon>delete</mat-icon></button>
               </div>

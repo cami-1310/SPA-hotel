@@ -41,8 +41,14 @@
         <h3>Haznos llegar tu comentario</h3>
 
         <!-- nombre -->
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" [(ngModel)]="formData.nombre" required pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$" #nombre="ngModel" placeholder="Tu nombre">
+        <mat-form-field>
+          <mat-label>Nombre</mat-label>
+          <input matInput type="text" id="nombre" name="nombre"
+                [(ngModel)]="formData.nombre"
+                required pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$" #nombre="ngModel"
+                placeholder="Tu nombre">
+        </mat-form-field>
+
         @if (nombre.invalid && nombre.touched) {
           <div class="error">
             @if (nombre.errors?.['required']) {
@@ -53,11 +59,16 @@
             }
           </div>
         }
-
+        
         <!-- correo -->
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email" [(ngModel)]="formData.email"
-              required email #email="ngModel" placeholder="correo@example.com">
+        <mat-form-field>
+          <mat-label>Correo electrónico</mat-label>
+          <input matInput type="email" id="email" name="email"
+                [(ngModel)]="formData.email"
+                required email #email="ngModel"
+                placeholder="correo@example.com">
+        </mat-form-field>
+
         @if (email.invalid && email.touched) {
           <div class="error">
             @if (email.errors?.['required']) {
@@ -70,10 +81,9 @@
         }
 
         <!-- nacionalidad -->
-        <label for="nacionalidad">Nacionalidad</label>
         <mat-form-field>
-          <mat-label>Select</mat-label>
-          <mat-select  name="nacionalidad" [(ngModel)]="formData.nacionalidad" required #nacionalidad="ngModel">   
+          <mat-label>Nacionalidad</mat-label>
+          <mat-select name="nacionalidad" [(ngModel)]="formData.nacionalidad" required #nacionalidad="ngModel">
             @for (pais of paises; track pais) {
               <mat-option [value]="pais">{{ pais }}</mat-option>
             }
@@ -84,19 +94,24 @@
           <div class="error">La nacionalidad es obligatoria.</div>
         }
 
-        <!-- ccomentario -->
-        <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="mensaje" [(ngModel)]="formData.mensaje"
-                  required maxlength="150" #mensaje="ngModel" rows="5"
-                  placeholder="Escribe tu mensaje..."></textarea>
+        <!-- comentario -->
+        <mat-form-field>
+          <mat-label>Mensaje</mat-label>
+          <textarea matInput id="mensaje" name="mensaje"
+                    [(ngModel)]="formData.mensaje"
+                    required maxlength="150" #mensaje="ngModel"
+                    placeholder="Escribe tu mensaje..." rows="5"></textarea>
+        </mat-form-field>
+        
         @if (mensaje.invalid && mensaje.touched) {
-          <div class="error">
-            @if (mensaje.errors?.['required']) {
+          @if (mensaje.errors?.['required']) {
+            <div class="error">
               El mensaje es obligatorio.
-            }
-            @if (mensaje.errors?.['maxlength']) {
-              El mensaje no puede superar los 150 caracteres.
-            }
+            </div>
+          }
+        } @else if (formData.mensaje.length === 150) {
+          <div class="error">
+            El mensaje no puede superar los 150 caracteres.
           </div>
         }
 
