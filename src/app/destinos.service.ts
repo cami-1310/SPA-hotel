@@ -13,7 +13,7 @@ export interface Destino {
   providedIn: 'root'
 })
 export class DestinosService {
-  private apiUrl = 'https://destinosuiza.free.beeceptor.com/todos';
+  private apiUrl = 'https://destinosuizza.free.beeceptor.com/todos';
 
   constructor(private http: HttpClient) {}
 
