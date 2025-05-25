@@ -1,7 +1,7 @@
 .contenedorCabs{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 20px;
+    max-width: 90%;
+    margin: 20px 0px;
+    box-sizing: border-box;
 }
 
 .contenedorCabs .card{
@@ -31,13 +31,13 @@ h5{
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    padding: 40px;
+    padding: 20px;
     margin: 0 auto;
 }
   
 .card {
     background-color: #fff;
-    border-radius: 16px;
+    border-radius: 10px;
     border: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -81,15 +81,17 @@ h5{
 }
 
 .contenedor{
+    max-width: 90%;
     padding: 30px;
     background-color: #A0C878;
-    margin: 40px;
+    margin: 40px 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
 }
 
 .contenedor h1{
@@ -98,9 +100,13 @@ h5{
     font-family: "Oranienbaum", serif;
 }
 
+.modal{
+    padding: 20px;
+}
+
 .modal-body{
     color: white;
-    margin: 20px;
+    margin: 5px;
     background-color: white;
 }
 
@@ -135,11 +141,11 @@ a{
 }
 
 .btn-reservar-modal{
-    width: 30%;
+    width: 50%;
 }
 
 .btn-reservar{
-    width: 30%;
+    width: 40%;
 }
 
 .btn-reservar:hover,

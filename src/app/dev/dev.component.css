@@ -1,11 +1,5 @@
 .dev-detalles{
-    display: grid;
-    grid-template-columns: 40% auto;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
     padding: 20px;
-    gap: 30px;
     background-color: #f5f5f5;
     border-radius: 10px;
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
@@ -22,24 +16,20 @@ p{
 
 #dev{
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.dev-detalles img{
-    max-width: 90%;
+    width: 90%;
+    object-fit: contain;
     border-radius: 10px;
 }
 
 .info{
+    text-align: justify;
     display: flex;
     flex-direction: column;
-    text-align: left;
-    justify-content: center;
-    margin: 20px;
+    gap: 20px;
 }
 
 .frase{
-    margin-top: 30px;
-    width: 100%;
+    margin-top: 10px;
     text-align: center;
     font-size: 20px;
     font-style: italic;
@@ -51,30 +41,18 @@ p{
 }
 
 .lenguajes{
-    margin-top: 30px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    margin-top: 10px;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.imgs{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-}
 
 .imgs img{
-    height: 80px;
-    margin: 30px;
+    max-height: 70px;
+    margin: 10px;
     transition: transform 0.3s ease;
 }
 

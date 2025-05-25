@@ -3,20 +3,22 @@
 
     <h5>Inicia sesion</h5>
 
-    <mat-form-field>
-        <mat-label class="label-custom">Nombre completo</mat-label>
-        <input matInput required formControlName="nombreCompleto">
-    </mat-form-field>
-
-    <mat-form-field>
-        <mat-label class="label-custom">Nombre de usuario</mat-label>
-        <input matInput required formControlName="username">
-    </mat-form-field>
-
-    <mat-form-field>
-        <mat-label class="label-custom">Contraseña</mat-label>
-        <input matInput type="password" required formControlName="password">
-    </mat-form-field>
-
-    <button mat-flat-button class="button" (click)="compararCredenciales()">Ingresar</button>
+    <div style="display: flex; flex-direction: column; justify-content: center;">
+        <mat-form-field>
+            <mat-label class="label-custom">Nombre completo</mat-label>
+            <input matInput required formControlName="nombreCompleto">
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label class="label-custom">Nombre de usuario</mat-label>
+            <input matInput required formControlName="username">
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label class="label-custom">Contraseña</mat-label>
+            <input matInput type="password" required formControlName="password">
+        </mat-form-field>
+    
+        <button mat-flat-button class="button" (click)="compararCredenciales()">Ingresar</button>
+    </div>
 </div>

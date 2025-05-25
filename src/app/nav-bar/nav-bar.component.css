@@ -1,8 +1,5 @@
 .links{
-    display: flex;
-    gap: 30px;
-    justify-content: right;
-    align-items: center;
+    gap: 10px;
 }
 
 .links a{
@@ -13,6 +10,7 @@
 
 .links a span{
     display: inline-block;
+    margin: 5px;
 }
 
 .links a span,
@@ -24,6 +22,11 @@
 .links a:hover svg{
     color: #27667B;
     transform: scale(1.1);
+}
+
+.nav-item{
+    text-align: left;
+    width: 100%;
 }
 
 .btn-format{
@@ -41,6 +44,9 @@
 .btn-logout{
     background-color: transparent;
     border: none;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 .btn-logout svg{

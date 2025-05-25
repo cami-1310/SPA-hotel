@@ -1,6 +1,8 @@
 #busqueda {
     display: flex;
-    width: 900px;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
     border: 1px solid #ccc;
     border-radius: 80px;
     background-color: #f5f5f5;

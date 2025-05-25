@@ -8,7 +8,9 @@
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
     text-align: justify;
     padding: 20px;
-    margin: 40px;
+    margin: 40px 0px;
+    box-sizing: border-box;
+    max-width: 95%;
 }
 
 .descripcion h1{
@@ -24,8 +26,6 @@
 }
 
 .imgs{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
     justify-content: center;
     justify-items: center;
     align-items: center;
@@ -38,8 +38,9 @@
 }
 
 .imgs img{
-    height: 120px;
-    margin: 30px;
+    min-height: 120px;
+    max-height: 90px;
+    margin: 20px;
     transition: transform 0.3s ease;
 }
 
@@ -53,10 +54,11 @@
     justify-content: center;
     justify-items: center;
     padding: 20px;
-    margin: 40px;
+    margin: 40px 0px;
     background-color: #A0C878;
     border-radius: 10px;
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
+    min-width: 95%;
 }
 
 .devs-info h1{
@@ -65,14 +67,6 @@
     color: white;
     margin: 10px;
     font-size: 50px;
-}
-
-.devs-img{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
 }
 
 .devs-img img{

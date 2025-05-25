@@ -1,10 +1,11 @@
 #servicios{
-  margin-top: 50px;
-  margin-bottom: 50px;
+  padding: 50px 15px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 h1 {  
@@ -14,13 +15,6 @@ h1 {
   font-size: 60px;
   font-family: "Oranienbaum", serif;
   letter-spacing: 3px;
-}
-
-.grid-servicios{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 95%;
-  gap: 20px;
 }
 
 .card-horizontal {
@@ -38,6 +32,9 @@ h1 {
 }
 
 .servicio-card {
+  min-width: 90%;
+  max-width: 290px;
+  margin-bottom: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -47,23 +44,26 @@ h1 {
 }
 
 #contenido {
-  padding: 40px;
+  min-width: 90%;
+  max-width: 300px;
+  margin: 20px 0px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   border-radius: 10px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  margin: 30px;
   background-color: #A0C878;
 }
 
 #contenido h1 {
+  padding: 10px;
   color: white;
+  margin: 0;
 }
 
 #contenido img{
-  width: 50%;
+  width: 80%;
   border-radius: 10px;
   margin: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -75,9 +75,18 @@ h1 {
 }
 
 #contenido p {
+  margin: 0;
+  text-align: center;
+  padding: 20px;
   font-size: 1rem;
-  margin-bottom: 12px;
   line-height: 1.6;
   color: white;
   font-size: 20px;
+}
+
+.container, .row, .col-12, .col-lg-6 {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }

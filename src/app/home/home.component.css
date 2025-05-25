@@ -1,5 +1,30 @@
 .texto{
     text-shadow: 2px 2px 5px rgb(0, 0, 0);
+    color: white;
+}
+
+.carousel-caption{
+    padding: 0px;
+}
+
+@media (max-width: 768px) {
+    .textoh1{
+        font-size: 30px;
+    }
+
+    .textop{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .textoh1{
+        font-size: 20px;
+    }
+
+    .textop{
+        font-size: 10px;
+    }
 }
 
 #contenedor{
@@ -20,15 +45,6 @@
 }
 
 #contenido {
-    padding: 40px;
-    display: grid;
-    gap: 30px;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    margin: 30px;
     background-color: #f5f5f5;
 }
 
@@ -42,7 +58,7 @@
 }
 
 .home-img img{
-    width: 80%;
+    width: 90%;
     border-radius: 10px;
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -50,8 +66,12 @@
 
 .home-img{
     background-color: #A0C878;
-    height: 95%;
+    padding: 30px;
     border-radius: 10px;
+}
+
+.lema img{
+    margin-top: 20px;
 }
 
 #contenido h2 {
@@ -68,24 +88,14 @@
 }
 
 .video{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    margin: 30px;
-    text-align: justify;
     background-color: #27667B;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .video h1{
     font-family: "Oranienbaum", serif;
-    font-size: 60px;
     color: white;
+    margin: 20px;
+    text-align: justify;
 }
 
 .video iframe{
@@ -98,28 +108,27 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-.card-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 40px;
-    margin: 30px;
+.row {
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 40px 10px;
     border: none;
-    background-color: #A0C878;
     border-radius: 10px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+#cards .row{
+    background-color: #A0C878;
 }
   
 .card {
     background-color: #fff;
-    border-radius: 16px;
+    border-radius: 10px;
     border: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1 1 300px;
     max-width: 360px;
+    min-height: 400px;
 }
   
 .card:hover,
@@ -151,4 +160,3 @@
     line-height: 1.5;
     text-align: justify;
 }
- 

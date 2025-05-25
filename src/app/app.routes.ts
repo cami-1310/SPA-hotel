@@ -9,7 +9,6 @@ import { RegistroComentariosComponent } from './registro-comentarios/registro-co
 import { RegistroReservasComponent } from './registro-reservas/registro-reservas.component';
 import { DevsComponent } from './devs/devs.component';
 import { DevComponent } from './dev/dev.component';
-import { VistaAPIComponent } from './vista-api/vista-api.component';
 import { DestinosComponent } from './destinos/destinos.component';
 import { SwitchLocalComponent } from './switch-local/switch-local.component';
 
