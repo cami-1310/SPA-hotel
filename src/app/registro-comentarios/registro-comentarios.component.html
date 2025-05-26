@@ -15,35 +15,35 @@
       <tbody>
         @for (comentario of comentarios; let i = $index; track comentario) {
           <tr [ngStyle]="comentario.editando ? {'background-color': '#f0fff0'} : {}">
-            <td>
+            <td data-label="nombre">
               @if (comentario.editando) {
                 <input matInput [(ngModel)]="comentario.nombre" required>
               } @else {
                 <span>{{ comentario.nombre }}</span>
               }
-            </td>
-            <td style="width: 280px;">
+            </td >
+            <td style="width: 280px;" data-label="email">
               @if (comentario.editando) {
                 <input [(ngModel)]="comentario.email" required style="width: 260px;">
               } @else {
                 <span>{{ comentario.email }}</span>
               }
             </td>
-            <td>
+            <td data-label="pais">
               @if (comentario.editando) {
                 <input [(ngModel)]="comentario.nacionalidad" required>
               } @else {
                 <span>{{ comentario.nacionalidad }}</span>
               }
-            </td>
-            <td style="width: 340px;">
+            </td >
+            <td style="width: 340px;"data-label="mensaje">
               @if (comentario.editando) {
                   <textarea [(ngModel)]="comentario.mensaje" required style="width: 320px; resize: none;"></textarea>
               } @else {
                 <span style="word-break: break-word;">{{ comentario.mensaje }}</span>
               }
             </td>
-            <td>
+            <td data-label="Acciones">
               <div class="enlinea">
                 @if (!comentario.editando) {
                   <button (click)="editarComentario(comentario)"><mat-icon>edit</mat-icon></button>

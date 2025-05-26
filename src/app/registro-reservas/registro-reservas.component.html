@@ -1,7 +1,8 @@
 <div class="tabla-container">
   @if (reservas.length > 0) {
     <h2>Reservaciones Registradas</h2>
-    <table>
+    <div class="tabla-responsive">
+    <table >
       <thead>
         <tr>
           <th>Nombre</th>
@@ -15,42 +16,42 @@
       <tbody>
         @for (reserva of reservas; let i = $index; track reserva) {
           <tr [ngStyle]="reserva.editando ? {'background-color': '#f0fff0'} : {}">
-            <td>
+            <td data-label="nombre">
               @if (reserva.editando) {
                 <input [(ngModel)]="reserva.nombre">
               } @else {
                 {{ reserva.nombre }}
               }
             </td>
-            <td>
+            <td data-label="fechaIngreso">
               @if (reserva.editando) {
                 <input type="date" [(ngModel)]="reserva.fechaIngreso">
               } @else {
                 {{ reserva.fechaIngreso }}
               }
             </td>
-            <td>
+            <td data-label="fechaSalida">
               @if (reserva.editando) {
                 <input type="date" [(ngModel)]="reserva.fechaSalida">
               } @else {
                 {{ reserva.fechaSalida }}
               }
             </td>
-            <td>
+            <td data-label="tipoHab">
               @if (reserva.editando) {
                 <input [(ngModel)]="reserva.tipoHab">
               } @else {
                 {{ reserva.tipoHab }}
               }
             </td>
-            <td>
+            <td data-label="numPersonas">
               @if (reserva.editando) {
                 <input type="number" [(ngModel)]="reserva.numPersonas">
               } @else {
                 {{ reserva.numPersonas }}
               }
             </td>
-            <td>
+            <td data-label="Acciones">
               <div class="enlinea">
                 @if (!reserva.editando) {
                   <button (click)="editarReserva(reserva)"><mat-icon>edit</mat-icon></button>
@@ -65,6 +66,8 @@
         }
       </tbody>
     </table>
+
+    </div>
   } @else {
     <p>No hay reservaciones registradas.</p>
   }
